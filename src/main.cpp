@@ -16,7 +16,7 @@ GLfloat color[] = {
 };
 
 const char* vertex_shader =
-"#version 460\n"
+"#version 430\n"
 "layout(location = 0) in vec3 vertex_position;"
 "layout(location = 1) in vec3 vertex_color;"
 "out vec3 color;"
@@ -26,7 +26,7 @@ const char* vertex_shader =
 "}"; 
 
 const char* fragment_shader =
-"#version 460\n"
+"#version 430\n"
 "in vec3 color;"
 "out vec4 frag_color;"
 "void main() {"
@@ -62,7 +62,7 @@ int main(void)
     }
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
