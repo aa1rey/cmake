@@ -3,7 +3,13 @@ cmake_minimum_required(VERSION 3.22.2 FATAL_ERROR)
 set(PROJECT_NAME cmake)
 PROJECT(${PROJECT_NAME})
 
-add_executable(cmake src/main.cpp)
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(${PROJECT_NAME} 
+	src/main.cpp
+	src/Renderer/ShaderProgram.h
+	src/Renderer/ShaderProgram.cpp
+)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
