@@ -16,17 +16,17 @@ GLfloat color[] = {
 };
 
 const char* vertex_shader =
-"#version 430\n"
+"#version 460\n"
 "layout(location = 0) in vec3 vertex_position;"
 "layout(location = 1) in vec3 vertex_color;"
-"out vec3 color"
+"out vec3 color;"
 "void main() {"
 "   color = vertex_color;"
 "   gl_Position = vec4(vertex_position, 1.0);"
-"}";
+"}"; 
 
 const char* fragment_shader =
-"#version 430\n"
+"#version 460\n"
 "in vec3 color;"
 "out vec4 frag_color;"
 "void main() {"
@@ -49,7 +49,7 @@ void glfwKeyCallback(GLFWwindow* pWindow, int key, int scancode, int action, int
     {
         glfwSetWindowShouldClose(pWindow, GL_TRUE);
     }
-}
+} 
 int main(void)
 {
 
@@ -88,7 +88,7 @@ int main(void)
     cout << "Render: " << glGetString(GL_RENDERER) << endl;
     cout << "OpenGL version: " << glGetString(GL_VERSION) << endl;
     
-    glClearColor(1, 1, 0, 1);
+    glClearColor(1, 0, 1, 0);
 
     GLuint vs = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vs, 1, &vertex_shader, nullptr);
